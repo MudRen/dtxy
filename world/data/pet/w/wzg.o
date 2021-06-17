@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"gin":50,"unit":"Ö»","max_gin":50,"ride":(["msg":"Æï","dodge":35,]),"per":29,"weight":1000,"spi":0,"con":43,"eff_gin":50,"age":1,"cor":12,"int":10,"combat_exp":1,"cps":8,"max_sen":50,"str":3,"kee":50,"eff_kee":50,"owner":"wzg","base_name":"ÍÃ","is_pet":1,"eff_sen":50,"sen":50,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"id":"dalao hu","attitude":"friendly","long":"ÀÏ»¢ËüÊÇÕòÔªĞ¡ÏÉµÄ³èÎï¡£","gender":"ÄĞĞÔ","name":"´óÀÏ»¢[2;37;0m","race":"Ò°ÊŞ","series_no":"1","max_kee":50,"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

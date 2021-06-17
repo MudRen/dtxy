@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["max_kee":50,"attitude":"friendly","max_gin":50,"long":"»ğËüÊÇÎŞÎªµÄ³èÎï¡£","race":"Ò°ÊŞ","per":28,"series_no":"1","spi":0,"con":23,"age":1,"actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"cor":20,"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"int":6,"combat_exp":1,"cps":7,"unit":"Í·","weight":1000,"kee":50,"gin":50,"str":3,"owner":"nowhere","ride":(["dodge":35,"msg":"Æï",]),"base_name":"ÍÃ","eff_gin":50,"max_sen":50,"is_pet":1,"eff_kee":50,"id":"simon qilin","sen":50,"gender":"ÄĞĞÔ","eff_sen":50,"name":"»ğ÷è÷ë[2;37;0m","limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

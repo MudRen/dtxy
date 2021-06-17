@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["race":"Ò°ÊŞ","per":21,"series_no":"1","spi":0,"age":1,"con":25,"cor":19,"combat_exp":1,"int":6,"cps":6,"kee":50,"str":3,"weight":1000,"base_name":"ÍÃ","startroom":"/d/qujing/baihuling/jail","gin":50,"sen":50,"gender":"ÄĞĞÔ","eff_sen":50,"name":"Ç±Ë®Áú[2;37;0m","is_pet":1,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"unit":"Ö»","max_gin":50,"ride":(["msg":"Æï","dodge":35,]),"eff_gin":50,"actions":,"owner":"putuo","max_sen":50,"eff_kee":50,"attitude":"friendly","id":"qianshui long","long":"ÁúËüÊÇÆÕÍÓµÄ³èÎï¡£","default_actions":,"max_kee":50,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

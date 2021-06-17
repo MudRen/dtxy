@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["weight":1000,"per":10,"spi":0,"con":25,"age":1,"cor":10,"combat_exp":1,"int":8,"max_sen":50,"cps":14,"unit":"Ìõ","kee":50,"str":3,"eff_kee":50,"gin":50,"owner":"nyi","eff_gin":50,"long":"½á¾Ö²»¹»³¤ËüÊÇÃ÷ÍºµÄ³èÎï¡£","base_name":"ÍÃ","is_pet":1,"attitude":"friendly","eff_sen":50,"sen":50,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"id":"exert_refresh niao","ride":(["dodge":35,"msg":"Æï",]),"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"gender":"Å®ĞÔ","race":"Ò°ÊŞ","name":"[36m²»[1;36mÊÇ[1;31m¸öÄñ[2;37;0m","series_no":"1","max_kee":50,"actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"max_gin":50,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

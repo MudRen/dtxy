@@ -1,0 +1,12 @@
+1. Modify newdtxy/current_version file. Run ./backup.sh to generate a complete backup of current running rzr mudlib
+2. Copy the .gz file to cygwin environment
+3. Extract the .gz file
+4. Under newdtxy directory, run ./cleanup_data.sh
+5. Start the mud under cygwin
+6. Log in as admin
+7. run "updir /d", "updir /daemon" and "updir /jjhome"
+8. Stop mud
+9. run ./mask_source.sh
+10. Modify world/adm/daemons/site_name file
+11. Start mud, test
+12. Zip up the entire directory

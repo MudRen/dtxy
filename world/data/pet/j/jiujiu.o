@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["weight":1000,"per":14,"spi":0,"con":37,"age":1,"cor":23,"combat_exp":1,"int":8,"max_sen":50,"cps":15,"unit":"Ö»","kee":50,"str":3,"eff_kee":50,"gin":56,"owner":"jiujiu","eff_gin":57,"long":"Ğ¡ÓêµÄÃàÑòËüÊÇĞ¡ÓêµÄ³èÎï¡£","base_name":"ÍÃ","is_pet":1,"attitude":"friendly","eff_sen":50,"sen":50,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"id":"yang yang","ride":(["dodge":35,"msg":"Æï",]),"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"gender":"Å®ĞÔ","race":"Ò°ÊŞ","name":"Ï²ÑóÑò[2;37;0m","series_no":"1","max_kee":60,"actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"max_gin":70,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

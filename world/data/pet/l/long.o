@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"eff_gin":50,"series_no":"1","sen":50,"ride":(["dodge":35,"msg":"Æï",]),"race":"Ò°ÊŞ","id":"kkk qilin","actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"max_kee":50,"base_name":"ÍÃ","weight":1000,"gin":50,"max_sen":50,"attitude":"friendly","eff_kee":50,"max_gin":50,"age":1,"is_pet":1,"owner":"long","combat_exp":1,"gender":"ÄĞĞÔ","per":26,"kee":50,"spi":0,"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"name":"[1;36m¹Ô÷è÷ë[2;37;0m","con":38,"cor":7,"long":"ÁËËüÊÇ·ÉÁúµÄ³èÎï¡£","eff_sen":50,"int":6,"unit":"ÁË","cps":11,"str":3,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

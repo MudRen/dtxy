@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["weight":1000,"per":14,"spi":0,"con":39,"age":1,"cor":24,"combat_exp":1,"int":9,"max_sen":50,"cps":8,"unit":"Í·","kee":50,"str":3,"eff_kee":50,"gin":50,"owner":"fang","eff_gin":50,"long":"Ê¥½àµÄ÷è÷ë¡£ËüÊÇ¾»·½µÄ³èÎï¡£","base_name":"ÍÃ","is_pet":1,"attitude":"friendly","eff_sen":50,"sen":50,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"id":"lotus qilin","ride":(["dodge":35,"msg":"Æï",]),"default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"gender":"Å®ĞÔ","race":"Ò°ÊŞ","name":"[1;37mÁ«»¨÷è÷ë[2;37;0m","series_no":"1","max_kee":50,"actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"max_gin":50,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["unit":"Ö»","gin":50,"per":29,"ride":(["msg":"Æï","dodge":35,]),"weight":1000,"spi":0,"con":38,"age":1,"cor":23,"eff_gin":50,"int":12,"combat_exp":1,"cps":14,"str":3,"kee":50,"base_name":"ÍÃ","is_pet":1,"eff_sen":50,"sen":50,"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"attitude":"friendly","long":"Ï²ÑòËüÊÇĞ¡Óê¶ùµÄ³èÎï¡£","gender":"Å®ĞÔ","name":"Ï²ÑòÑò[2;37;0m","default_actions":,"actions":,"max_gin":50,"max_sen":50,"eff_kee":50,"owner":"rainer","id":"exert_refresh yang","race":"Ò°ÊŞ","series_no":"1","max_kee":50,])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"

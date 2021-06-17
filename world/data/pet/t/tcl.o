@@ -1,0 +1,5 @@
+#/d/eastway/npc/pet.c
+dbase (["max_gin":50,"race":"Ò°ÊŞ","per":7,"ride":(["msg":"Æï","dodge":35,]),"series_no":"1","eff_gin":50,"spi":0,"con":32,"age":1,"actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"cor":5,"int":7,"combat_exp":1,"cps":15,"weight":1000,"kee":50,"str":3,"owner":"tcl","max_sen":50,"base_name":"ÍÃ","gin":50,"eff_kee":50,"sen":50,"attitude":"friendly","id":"wanhu hou","gender":"ÄĞĞÔ","eff_sen":50,"long":"Ò»Ö»ºï×Ó£¬ÒòÁ¢¹ı´ó¹¦£¬±»·âÊ³Íò»§¡£ËüÊÇÎ°¸çµÄ³èÎï¡£","is_pet":1,"name":"Íò»§ºï[2;37;0m","default_actions":(["action":"$N¹¥»÷$nµÄ%s£¬%s",]),"limbs":({"Í·²¿","ÉíÌå","Ç°½Å","áá½Å","Î²°Í",}),"max_kee":50,"unit":"Î»",])
+skills (["unarmed":10,])
+learned (["unarmed":0,])
+SAVE_NAME "pet_save"
