@@ -5,20 +5,20 @@
 inherit NPC;
 
 /*
-static int DP_DAWN = 0;
-static int DP_SUNRISE = 1;
-static int DP_MORNING = 2;
-static int DP_NOON = 3;
-static int DP_AFTERNOON = 4;
-static int DP_EVENING = 5;
-static int DP_NIGHT = 6;
-static int DP_MIDNIGHT = 7;
+nosave int DP_DAWN = 0;
+nosave int DP_SUNRISE = 1;
+nosave int DP_MORNING = 2;
+nosave int DP_NOON = 3;
+nosave int DP_AFTERNOON = 4;
+nosave int DP_EVENING = 5;
+nosave int DP_NIGHT = 6;
+nosave int DP_MIDNIGHT = 7;
 */
 // day_phase is an array of mappings of the following type:
 // length:time_msg:desc_msg:event_fun
 // %d:%s:%s:%s
 
-static mapping *day_phase = NATURE_D->query_day_phase();
+nosave mapping *day_phase = NATURE_D->query_day_phase();
 
 string seashore="/d/changan/eastseashore";
 string beach="/d/changan/beach";
@@ -60,7 +60,7 @@ void create() {
   set_skill("baihua-zhang", 10);
   map_skill("unarmed", "baihua-zhang");
   set_skill("dodge", 20);
-  
+
   set("limbs", ({
                "头部", "颈部", "胸口", "后心", "尾巴","喙部",
                "左脚", "右脚", "左翅", "右翅",}) );
@@ -69,7 +69,7 @@ void create() {
 /*
   set("chat_msg", ({
             (: flyaway :),
-             
+
         }) );
   set("chat_chance",30);
 */
@@ -133,8 +133,8 @@ int do_gen(string arg) {
   if (!arg && arg!="jing wei" && arg!="bird" && arg!="wei")
     return notify_fail("你要跟谁？\n");
   if (me->query_temp("follow_jingwei"))
-    return notify_fail("你已经在跟着精卫了。\n"); 
-  if ((phase >0) && (phase<6)) 
+    return notify_fail("你已经在跟着精卫了。\n");
+  if ((phase >0) && (phase<6))
     return notify_fail("精卫对你说：“白天天气太热了，晚上我再带你去吧。”\n");
 
   me->set_temp("follow_jingwei",1);

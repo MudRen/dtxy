@@ -1,6 +1,6 @@
 inherit F_VENDOR_SALE;
 
-static int base_price=50000;
+nosave int base_price=50000;
 
 int ask_party();
 int ask_money();
@@ -9,7 +9,7 @@ void create()
 	reload("xifuhui");
         set_name("老害虫", ({"xifuhui boss","boss" }));
 	set("title", "喜福会老板娘");
-	
+
         set("age", 32);
         set("gender", "女性");
         set("attitude", "friendly");
@@ -133,7 +133,7 @@ int ask_money()
 	object who=this_player();
 	int i;
 	i=(int)this_object()->query("money")+160;
-	if( who->query("id")!="bula"){ 
+	if( who->query("id")!="bula"){
 		command("dunno");
 		return 1;
 	}
@@ -157,13 +157,13 @@ void start_party(object who)
 {
 	object me=this_object();
 	command("chat* "+name()+
-	       "：各位老爷太太少爷小姐，今日" + who->query("name") +  
+	       "：各位老爷太太少爷小姐，今日" + who->query("name") +
 "在喜福会大开酒席，欢迎各位前来捧场！");
 	command("say 您要开始(start)，我便开席。您要上菜(serve)，我就上菜，等您吃饱了，玩腻了，咱就结束(finish)。");
 	me->set_temp("ready_to_party", 1);
 }
 int do_start()
-{	
+{
 	object who = this_player();
         object me = this_object();
 	int i;
@@ -180,7 +180,7 @@ int do_start()
 	message_vision("$N大声喊着：开～～席～～喽～～\n\n", me);
 	me->set_temp("party_start_already", 1);
 	me->delete_temp("ready_to_party");
-	tell_room( environment(who), "旁边四个唢呐手大声的吹起了欢快的唢呐。\n");	
+	tell_room( environment(who), "旁边四个唢呐手大声的吹起了欢快的唢呐。\n");
 
 	// mon
 	environment(me)->set("resource/nuerhong",1);
@@ -194,7 +194,7 @@ int do_start()
 	  	cup->move(ob);
 	}
 	seteuid(getuid());
-	if(girla=new("/d/city/npc/girla"))	
+	if(girla=new("/d/city/npc/girla"))
  	girla->move(environment(me));
 
         seteuid(getuid());
@@ -304,13 +304,13 @@ int do_kill(string arg)
 int do_cast(string arg)
 {
         object who = this_player();
-        object me = this_object(); 
+        object me = this_object();
 	message_vision("$N张开嘴，结结吧吧地念了几声咒语。\n", who);
         message_vision ("$N对$n直摇头：这大喜的日子，你念哪门子咒啊！\n", me, who);
         return 1;
-}        
+}
 int do_exert(string arg)
-{               
+{
         object who = this_player();
         object me = this_object();
 	message_vision("$N鬼鬼祟祟地一运气。\n",who);
@@ -322,11 +322,11 @@ int do_perform(string arg)
         object who = this_player();
         object me = this_object();
 	message_vision("$N脸色不大对，好象动了杀机！\n", who);
-        message_vision ("$N对$n直摇头：这大喜的日子动什么刀枪啊！\n", me, who);  
+        message_vision ("$N对$n直摇头：这大喜的日子动什么刀枪啊！\n", me, who);
         return 1;
-}        
+}
 int do_steal(string arg)
-{       
+{
         object who = this_player();
         object me = this_object();
 	message_vision("$N伸出手，想要偷点什么。\n", who);
@@ -348,7 +348,7 @@ int accept_object(object me, object ob)
   {
         object lw;
         lw=new("/u/mind/lwbook.c");
-        
+
  if((string)ob->query("name")=="团圆宴席" )
         {
          command("smile");
@@ -356,8 +356,8 @@ int accept_object(object me, object ob)
 "真是有心人，老娘就赠一礼物予你。");
         call_out("destroy", 1, ob);
         lw->move(me);
-        
-        return 1;       
+
+        return 1;
         }
  }
 void destroy(object ob)
@@ -365,4 +365,3 @@ void destroy(object ob)
         destruct(ob);
         return;
 }
-

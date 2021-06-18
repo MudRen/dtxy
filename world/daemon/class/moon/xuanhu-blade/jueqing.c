@@ -1,11 +1,11 @@
 #include <ansi.h>
 inherit SSERVER;
 int get_current_day_phase();
-static mapping *day_phase = NATURE_D->query_day_phase(); 
+nosave mapping *day_phase = NATURE_D->query_day_phase();
 int perform(object me, object target)
 {
   object weapon;
-  int damage,enhance;   
+  int damage,enhance;
   string msg,str;
   int i,damage1;
   int phase = get_current_day_phase();
@@ -26,7 +26,7 @@ int perform(object me, object target)
            return notify_fail("你没有学到的口诀，怎么能领悟到「绝情」的奥秘！\n");
         if((int)me->query("kee") < 600 )
                 return notify_fail("你的气血不足，没法子施用外功！\n");
-        
+
 	if( me->query("lunhui_zhuanshi") > 1 )
 		cd -= me->query("lunhui_zhuanshi") - 1;
         if( time()-(int)me->query_temp("jueqing_end") < cd )
@@ -88,7 +88,7 @@ int perform(object me, object target)
 			COMBAT_D->report_status(target,0);
 			me->add("force",-damage/5);
 	        	if( me->query("force") < 0 ) me->set("force",0);
-	        	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )  
+	        	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )
 		        {
 				str=me->name()+HIM"使出"+HIC"「月华斩」"+HIM+"将"+target->name()+HIM"生生斩作两片！";
 				message("channel:rumor",HIM"【空穴来风】某人："+str+"\n"NOR,users());
@@ -108,7 +108,7 @@ int perform(object me, object target)
 			switch (random(4))
         		{
                         	case 1:
-                        	{ 
+                        	{
                         		//message_vision(HIG"\n四周的风越来越大了。\n"NOR,me);
                         		seteuid(getuid());
 					me->set("actions", (: call_other, SKILL_D("jueqingbian"), "query_action" :) );
@@ -117,7 +117,7 @@ int perform(object me, object target)
 					COMBAT_D->do_attack(me, target,weapon);
                                 	break;
                         	}
-	                        case 2: 
+	                        case 2:
 	                        {
 	                        	//message_vision(HIB"\n天空中云层越来越厚了。\n"NOR,me);
 	                        	seteuid(getuid());
@@ -126,8 +126,8 @@ int perform(object me, object target)
 					weapon->set("apply/skill_type","blade");
 					COMBAT_D->do_attack(me, target,weapon);
 	                                break;
-	                        } 
-	                        case 3: 
+	                        }
+	                        case 3:
 	                        {
 	                        	//message_vision(BLU"\n似乎有几声闷雷响过。\n"NOR,me);
 	                        	seteuid(getuid());
@@ -137,7 +137,7 @@ int perform(object me, object target)
 					COMBAT_D->do_attack(me, target,weapon);
 	                                break;
 	                        }
-	                        case 0: 
+	                        case 0:
 	                        {
 	                        	//message_vision(CYN"\n天幕被闪电划破几道细痕。\n"NOR,me);
 	                        	seteuid(getuid());
@@ -148,7 +148,7 @@ int perform(object me, object target)
 					COMBAT_D->do_attack(me, target,weapon);
 	                                break;
 	                        }
-                	}   
+                	}
 		}
 		if( (phase >= 0 && phase < 6) && me->query("accept/sun") )//白天
 	    	{
@@ -164,7 +164,7 @@ int perform(object me, object target)
 				COMBAT_D->report_status(target,0);
 				me->add("force",-damage/5);
 		        	if( me->query("force") < 0 ) me->set("force",0);
-		        	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )  
+		        	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )
 			        {
 					str=me->name()+HIM"使出"+HIR"「太阳神之怒」"+HIM+"，巨大的火球从天而降，将"+target->name()+HIM"生生砸死！";
 					message("channel:rumor",HIM"【空穴来风】某人："+str+"\n"NOR,users());
@@ -189,13 +189,13 @@ int perform(object me, object target)
         	else
         	{
         		tell_object(me,HIY"\n两股真气似乎无法分出高低，终于慢慢平息，各自融入丹田之内。\n"NOR,me);
-        	}               
+        	}
 	}
 	else
 	{
 		message_vision(HIC"\n$N施展完绝情四式，眼神更加冰冷。\n"NOR,me);
 		tell_object(me,HIW"\n忽然一股奇寒自你丹田升起，慢慢散入奇经八脉，你一时竟动弹不得。\n"NOR,me);
-	}	
+	}
 	weapon->set("use_apply_skill",weapon->query_temp("original/use_apply_skill"));
     	weapon->set("apply/skill_type",weapon->query_temp("original/skill_type"));
 	me->delete_temp("WX_perform");
@@ -206,7 +206,7 @@ int perform(object me, object target)
         target->add_temp("apply/parry",damage/2);
         me->add_temp("apply/attack",-enhance/2);
     	me->add_temp("apply/damage",-damage/2);
-    	me->set_temp("jueqing_end",time());	
+    	me->set_temp("jueqing_end",time());
   return 1;
 }
 void tianlei(object me, object target)
@@ -214,7 +214,7 @@ void tianlei(object me, object target)
         string msg,str;
         int i;
         object *ob = all_inventory(environment(me));
-	if(!me) 
+	if(!me)
       		return;
       	me->delete_temp("no_move");
       	if( !sizeof(ob) )
@@ -240,7 +240,7 @@ void tianlei(object me, object target)
 	return ;
 }
 
-int get_current_day_phase() 
+int get_current_day_phase()
 {
     // ref. /adm/daemons/natured.c:init_day_phase()
     mixed *local = localtime(time()*60);

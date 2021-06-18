@@ -1,4 +1,4 @@
-// xgrep.c 
+// xgrep.c
 // write by JackyBoy@CuteRabbit Studio for SDXL & CCTX 1999/6/1
 // 为了避免递归太深，请不要设置进入级别超过16级. JackyBoy
 inherit F_CLEAN_UP;
@@ -6,8 +6,8 @@ int help();
 int do_grep(string,string,int);
 string resolvePath(string,int);
 
-static string pattern;
-static string result;
+nosave string pattern;
+nosave string result;
 
 int main(object me, string arg)
 {
@@ -84,14 +84,14 @@ int do_grep(string path,string wild,int level)
 	}
 	//for(i=0;i<(sizeof(fs=get_dir(path+wild))-1);i++)
 	//	write(fs[i]+"\n");
-	
+
 	foreach(file in get_dir(path+wild))
 	{
 		//write("检查："+path+file+"\n");
 		//write("file_size返回："+file_size(path+file)+"\n");
 		if(file=="."||file=="..")
 			continue;
-		
+
 		switch(file_size(path+file))
 		{
 			case -1:
@@ -117,7 +117,7 @@ int do_grep(string path,string wild,int level)
 				break;
 			*/
 		}
-		
+
 	}
 	return 1;
 }

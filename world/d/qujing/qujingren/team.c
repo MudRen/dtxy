@@ -4,7 +4,7 @@
 #include <dbase.h>
 #include <origin.h>
 
-static object leader, *team;
+nosave object leader, *team;
 
 int set_leader(object ob)
 {
@@ -23,7 +23,7 @@ int follow_path(string dir)
 		this_object()->remove_all_enemy();
                 if (this_object()->query("id")=="qujing ren")
                         //blacksh 01/19 qujingren move need time
-                  {  
+                  {
                       if (this_object()->query("food")<20) return 1;
                       backval= GO_CMD->main(this_object(), dir);
                       OBSTACLE_D->set("where_qujingren",
@@ -88,7 +88,7 @@ varargs int dismiss_team(object ob)
 	int i;
 
 	if( !arrayp(team) ) return 0;
-	
+
 	if( !ob ) {
 		if( team[0]==this_object() ) {
 			team -= ({ 0 });
@@ -110,6 +110,3 @@ object *query_team()
 {
 	return team;
 }
-
-
-

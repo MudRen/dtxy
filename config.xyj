@@ -18,7 +18,7 @@ address server ip : localhost
 address server port : 5554 
  
 # absolute pathname of mudlib
-mudlib directory : ./world
+mudlib directory : .
  
 # absolute pathname of driver/config dir
 binary directory : .

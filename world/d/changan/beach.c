@@ -7,7 +7,7 @@ inherit ROOM;
 // length:time_msg:desc_msg:event_fun
 // %d:%s:%s:%s
 
-static mapping *day_phase = NATURE_D->query_day_phase();
+nosave mapping *day_phase = NATURE_D->query_day_phase();
 
 string dest=__DIR__"eastseashore";
 
@@ -92,7 +92,7 @@ void strip(object me) {
   for (int i=0;i<sizeof(inv);i++)
     if (userp(inv[i])) inv[i]->move(dest);
     else destruct(inv[i]);
-  
+
 }
 void init() {
   int phase = NATURE_D->query_current_day_phase();
@@ -106,24 +106,24 @@ int do_fill(string arg) {
   int phase = NATURE_D->query_current_day_phase();
     int r;
 
-    if (!arg && arg!="hai" && arg!="sea") 
+    if (!arg && arg!="hai" && arg!="sea")
        return notify_fail("你要填什么？\n");
 
 /*
-    if (phase < 6) 
+    if (phase < 6)
         remove_action("do_fill","fill");
 */
- 
+
     if (me->is_fighting() || me->is_busy() ) {
         write("你正忙着呢。\n");
         return 1;
-    }   
+    }
     if (me->query("kee")<500 || me->query("sen")<500 ||
         me->query("mana") <1000 || me->query("force")<1000) {
             write("你太累了，还是歇会儿吧。\n");
         return 1;
     }
-        
+
   stone=present("shi kuai",me);
   if (!stone || stone->query_amount()==0)
   {
@@ -142,4 +142,3 @@ int do_fill(string arg) {
     me->start_busy(3+random(3));
     return 1;
 }
-    

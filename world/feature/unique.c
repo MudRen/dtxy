@@ -5,14 +5,14 @@
 
 inherit F_ONEOWNER;
 
-static int compare_number = -1;
+nosave int compare_number = -1;
 // mon 4/5/98
 
 int query_unique() { return 1; }
 int query_compare_number() { return compare_number; }
 
 // This function returns the number of objects in the mud
-varargs int query_number() { 
+varargs int query_number() {
    int  num;
 
    num = sizeof(filter_array(children(file_name(this_object())), (:clonep:)));
@@ -37,7 +37,7 @@ varargs int in_mud()
    // mon 4/5/98, set default number.
 
    if( query_number() >= compare_number )
-   // mon 4/5/98 changed > to >= and modified 
+   // mon 4/5/98 changed > to >= and modified
    //  /std/char/npc.c accordingly.
 	  return 1;
    return 0;
@@ -54,8 +54,8 @@ varargs string clone_file()
 	  return file_name(me);
    else   {
 	  if( stringp(rev=me->query("replace_file")) )
-		 return rev; 
-      return ""; 
+		 return rev;
+      return "";
    }
 }
 

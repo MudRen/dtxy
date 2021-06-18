@@ -4,13 +4,13 @@ inherit NPC;
 inherit F_SAVE;
 
 private string SAVE_NAME="pet_save";
-private static int can_save=1;
+private nosave int can_save=1;
 
 //void try_move();
 
 void create()
-{	
-	seteuid(getuid());	
+{
+	seteuid(getuid());
         set_name("³èÎï", ({"pet"}) );
         set("gender", "Å®ÐÔ");
 	set("race","Ò°ÊÞ");
@@ -28,7 +28,7 @@ void create()
 	set_skill("unarmed",10);
   	set_temp("apply/attack", 80);
   	set_temp("apply/armor", 80);
-/*	
+/*
 	set("chat_chance", 2);
 	set("chat_msg", ({
 		(: random_move :)
@@ -82,7 +82,7 @@ void init()
 	  this_object()->set_leader(this_player());
         }
 	*/
-	
+
 //	remove_call_out("try_move");
 //        call_out("try_move",1);
 }
@@ -113,7 +113,7 @@ int do_drop(string arg)
 
 int do_get(string arg)
 {    object me=this_object(),who=this_player(),env;
-     
+
      if(!arg) return 0;
      env = environment(who);
      if(present(arg,env)!=me) return 0;
@@ -131,20 +131,20 @@ int do_get(string arg)
 }
 
 int do_kill(string arg)
-{       
+{
 	object me,who;
 	string name,verb,what,obj;
 	if (!arg) return 0;
 	verb=query_verb();
 	me=this_player();
-	
+
 	if(verb=="steal") {
-	  if(sscanf(arg, "%s from %s", what, obj)!=2 ) 
+	  if(sscanf(arg, "%s from %s", what, obj)!=2 )
 	    return 0;
           }
         else obj=arg;
 
-	if(!objectp(who=present(obj,environment(me))) 
+	if(!objectp(who=present(obj,environment(me)))
 	   || !living(who)) return 0;
 //	if(who->query("is_baby")) {
 	if(who==this_object()) {
@@ -192,10 +192,10 @@ void relay_emote(object ob, string verb)
                         break;
         case "bite":
                 command("face " + ob->query("id"));
-                        break;  
+                        break;
         case "papaya":
                 command("pout");
-                        break;  
+                        break;
 
                 }
 }
@@ -214,8 +214,8 @@ void relay_whisper(object me, string msg)
         if( strsrch(msg, "chat") != -1 ||
             strsrch(msg, "sldh") != -1 ||
             strsrch(msg, "es") != -1 ||
-            strsrch(msg, "rumor") != -1 ||  
-            strsrch(msg, "xyj") != -1 ||  
+            strsrch(msg, "rumor") != -1 ||
+            strsrch(msg, "xyj") != -1 ||
             strsrch(msg, "tell") != -1 ||
             strsrch(msg, "follow") != -1 ||
             strsrch(msg, "apprentice") != -1 ||
@@ -233,4 +233,3 @@ void relaying (string msg)
 {//execute the order.
         command (msg);
 }
-

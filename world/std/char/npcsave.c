@@ -20,7 +20,7 @@
 // 5. If need reset certain parameters, it maybe necessary
 //    to remove the .o file by hand before update the NPC
 //    file because it will restore from the .o filr automatically.
-//    
+//
 
 #include <origin.h>
 #include <user.h>
@@ -30,7 +30,7 @@ inherit NPC;
 inherit F_SAVE;
 
 private string SAVE_NAME="npc_save";
-private static int can_save=1;
+private nosave int can_save=1;
 //default setting
 
 string query_save_name() {return SAVE_NAME;}
@@ -40,7 +40,7 @@ string query_save_name() {return SAVE_NAME;}
 void reload(string savename)
 {
       if(clonep()) {
-        if(sizeof(filter_array(children(base_name(this_object())), 
+        if(sizeof(filter_array(children(base_name(this_object())),
           (:clonep:)))>1) {
             can_save=0;
 	    call_out("self_destroy",1);
@@ -48,13 +48,13 @@ void reload(string savename)
 	}
       }
 
-   if(clonep() && savename && can_save) { 
+   if(clonep() && savename && can_save) {
    // only cloned obj can save and restore.
      SAVE_NAME=savename;
      if(!restore())
        log_file("npc_save",sprintf("Failed to restore %s(%s).\n",
          this_object()->query("id"),savename));
-   }   
+   }
 }
 
 // This is used by F_SAVE to determine the filename to save our data.
@@ -73,7 +73,7 @@ int save()
 	string file=query_save_file();
 	string dir=DATA_DIR "npc/";
 	int len=strlen(dir);
-	
+
 	if(!file || strlen(file)<=len) return 0;
 	// can only save to DATA_DIR "npc/" dir.
 	if(file[0..(len-1)]!=dir) return 0;
@@ -84,7 +84,7 @@ int save()
 //	  clean_up_autoload();		// To save memory
 	  return res;
 	} else
-	  return 0;  
+	  return 0;
 }
 
 void setup()
@@ -104,4 +104,3 @@ void self_destroy()
     if(this_object())
 	destruct(this_object());
 }
-

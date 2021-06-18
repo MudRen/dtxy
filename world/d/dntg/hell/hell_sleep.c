@@ -2,20 +2,20 @@
 //inherit ROOM;
 #include <ansi.h>
 
-static int DP_DAWN = 0;
-static int DP_SUNRISE = 1;
-static int DP_MORNING = 2;
-static int DP_NOON = 3;
-static int DP_AFTERNOON = 4;
-static int DP_EVENING = 5;
-static int DP_NIGHT = 6;
-static int DP_MIDNIGHT = 7;
+nosave int DP_DAWN = 0;
+nosave int DP_SUNRISE = 1;
+nosave int DP_MORNING = 2;
+nosave int DP_NOON = 3;
+nosave int DP_AFTERNOON = 4;
+nosave int DP_EVENING = 5;
+nosave int DP_NIGHT = 6;
+nosave int DP_MIDNIGHT = 7;
 
 // day_phase is an array of mappings of the following type:
 // length:time_msg:desc_msg:event_fun
 // %d:%s:%s:%s
 
-static mapping *day_phase = NATURE_D->query_day_phase();
+nosave mapping *day_phase = NATURE_D->query_day_phase();
 
 int get_current_day_phase() {
     // ref. /adm/daemons/natured.c:init_day_phase()
@@ -57,7 +57,7 @@ int do_sleep (string arg)
   message_vision ("$N喝得酩酊大醉，倚在在铁板桥边松阴之下，霎时间睡着了。\n",me);
   remove_call_out ("go_hell");
   call_out ("go_hell",2+random(5),me);
-  return 1; 
+  return 1;
 }
 
 void go_hell(object me) {
@@ -74,7 +74,7 @@ void go_hell(object me) {
 
   string wang1=wang[random(10)];
   me->set_temp("dntg_hell/next",wang1);
-  
+
   tell_object(me,HIB"\n睡梦中忽见两人走了过来，大声喝道：“"+me->query("name")+
                "，汝阳寿已尽，吾等奉冥王之命，特来勾你。”\n"
                 +"说罢不容分说，拿根铁索往你颈上一套，拉了就走。\n\n"NOR);

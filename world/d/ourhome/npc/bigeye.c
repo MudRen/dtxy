@@ -4,7 +4,7 @@
 inherit NPC_SAVE;
 string send_mail();
 string receive_mail();
-static int i;
+nosave int i;
 
 void create()
 {	reload("jiangrobot");
@@ -17,10 +17,10 @@ void create()
 		"前玉皇大帝亲信。因为偷看玉女出浴而被罚为邮差。\n他本来是和顺风耳一起呆在花果山仙石处的，\n后因嫌不够热闹跑到长安来了。\n");
 	set("combat_exp", 8000);
        set("daoxing", 100000);
- 
+
 	set("attitude", "friendly");
 	set("inquiry", ([
-                        "name":"连我你都不认识？大名鼎鼎的千里眼就是我。", 
+                        "name":"连我你都不认识？大名鼎鼎的千里眼就是我。",
 		"here" : "鬼知道这是什么地方！我只负责收信发信。",
                         "玉女" : "嘿嘿．．．不错。就算砍头我也划算了。",
                         "玉皇大帝" : "你别提他！一提我就有气．．．只许州官放火，不许百姓点灯。",
@@ -147,14 +147,14 @@ int give_quest()
         }
 // 没完成任务的判断
         if ((int)me->query("letter/task_time")){
-// 没完成任务， 但还在时间允许范围内 
+// 没完成任务， 但还在时间允许范围内
         if( ((int)me->query("letter/task_time")) >  time() ){
                 tell_object(me,"你现在的任务是把信送给"+me->query("letter/target")+"\n");
                 write("千里眼生气的对你说： 你得把信帮我送到呀。\n");
                 return 1;
-        } 
-// 没完成任务，时间已过，增加busy为惩罚时间。        
-        else { if(!me->query("idle_start")){me->set("idle_time",time()+120+random(120));me->set("idle_start",1);} 
+        }
+// 没完成任务，时间已过，增加busy为惩罚时间。
+        else { if(!me->query("idle_start")){me->set("idle_time",time()+120+random(120));me->set("idle_start",1);}
                  if(me->query("idle_time")>time())
                   {
         	 write("千里眼生气的对你说：这点小事都做不好,嗯。。。\n");
@@ -204,4 +204,3 @@ int give_quest()
         me->delete("letter_over");
         return 1;
 }
-

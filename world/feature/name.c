@@ -1,12 +1,12 @@
 // Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
 /* <SecCrypt CPL V3R05> */
- 
+
 // name.c
 
 #include <ansi.h>
 #include <dbase.h>
 
-static string *my_id;
+nosave string *my_id;
 
 string *query_my_id()
 {
@@ -26,13 +26,13 @@ int id(string str)
 
   if( this_player() && !this_player()->visible(this_object()) ) return 0;
 
-  if( pointerp(applied_id = query_temp("apply/id")) 
-  &&  sizeof(applied_id) ) 
+  if( pointerp(applied_id = query_temp("apply/id"))
+  &&  sizeof(applied_id) )
    if( member_array(str, applied_id)!=-1 )
     return 1;
    else
     return 0;
-    
+
   // If apply/id exists, this object is "pretending" something, don't
   // recognize original id to prevent breaking the pretending with "id"
   // command.
@@ -47,7 +47,7 @@ string *parse_command_id_list()
 {
   string *applied_id;
 
-  if( pointerp(applied_id = query_temp("apply/id")) 
+  if( pointerp(applied_id = query_temp("apply/id"))
   &&  sizeof(applied_id) )
    return applied_id;
   else
@@ -57,7 +57,7 @@ string *parse_command_id_list()
 varargs string name(int raw)
 {
   string str, *mask;
-  
+
   if( !raw && sizeof(mask = query_temp("apply/name")) )
    return mask[sizeof(mask)-1];
   else {
@@ -74,7 +74,7 @@ varargs string short(int raw)
   string title, nick, str, *mask;
 //add by bear
 string drgree,guard,bang_name;
-  
+
   if( !stringp(str = query("short")) )
    str = name(raw) + "(" + capitalize(query("id")) + ")";
 
@@ -85,7 +85,7 @@ string drgree,guard,bang_name;
 	else if ((int)query_temp("pending/meditating") != 0)
 			return HIC+name() + "Á½ÑÛÎ¢±Õ,ÅÌÏ¥¶ø×ø,ÕıÔÚÚ¤Ë¼ĞŞÁ¶·¨Á¦."NOR;
 	else if ((int)query_temp("zuochan") != 0)
-			return HIC+name() + "ÅÌÏ¥×øÔÚÆÑÍÅÉÏ,ÕıÔÚ²ÎÎò·ğ·¨......"NOR;		
+			return HIC+name() + "ÅÌÏ¥×øÔÚÆÑÍÅÉÏ,ÕıÔÚ²ÎÎò·ğ·¨......"NOR;
      }
 
   if( !raw && sizeof(mask = query_temp("apply/short")) )
@@ -144,7 +144,7 @@ return name() + "[1;33m¡´Î×Ê¦»úÆ÷ÈËÖĞ¡µ[m";
 varargs string long(int raw)
 {
   string str, extra, *mask;
-  
+
   if( !raw && sizeof(mask = query_temp("apply/long")) )
    str = mask[sizeof(mask)-1];
   else if( !stringp(str = query("long")) )
@@ -155,5 +155,3 @@ varargs string long(int raw)
 
   return str;
 }
-
-

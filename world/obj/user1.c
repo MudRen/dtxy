@@ -10,7 +10,7 @@ inherit F_SAVE;
 inherit F_BACKUP;
 inherit F_ENCODING;
 
-static int last_age_set;
+nosave int last_age_set;
 
 void create()
 {
@@ -155,7 +155,7 @@ if( interactive(this_object())&&query_idle( this_object())>IDLE_TIMEOUT )
 			break;
 		case DUMP_IDLE:
 if(!wizardp(this_object())){
-			tell_object( this_object(), "对不起，您已经发呆超过 " 
+			tell_object( this_object(), "对不起，您已经发呆超过 "
 				+ IDLE_TIMEOUT/60 + " 分钟了，请下次再来。\n");
 			tell_room( environment(), "一阵风吹来，将发呆中的" + query("name")
 				+ "化为一堆飞灰，消失了。\n", ({this_object()}));
@@ -183,7 +183,7 @@ private void net_dead()
 	  }
         }
 
-	if( userp(this_object()) ) 
+	if( userp(this_object()) )
 	    CHANNEL_D->do_channel(this_object(), "sys", "断线了。",0,1);
 
 	// used in logind for IP check
@@ -222,11 +222,11 @@ if (this_object()->query_temp("gamble_qian")
 	                            ||this_object()->query_temp("gamble_ji")
 	                            ||this_object()->query_temp("gamble_gui"))
 	   { tell_room(environment(),query("name") + "丢下押的钱就断线了.\n",this_object());
-                                      this_object()->delete_temp("gamble_qian");	   
-                                      this_object()->delete_temp("gamble_gutou");	
-                                      this_object()->delete_temp("gamble_ji");	      
+                                      this_object()->delete_temp("gamble_qian");
+                                      this_object()->delete_temp("gamble_gutou");
+                                      this_object()->delete_temp("gamble_ji");
                                       this_object()->delete_temp("gamble_gui");
-            }	   
+            }
            else if (!this_object()->query("env/invisibility"))
 	        tell_room(environment(), query("name") + "断线了。\n", this_object());
 	    CHANNEL_D->do_channel(this_object(), "sys", "断线了。");
@@ -245,4 +245,3 @@ void reconnect()
 	remove_call_out("do_net_dead");
 	tell_object(this_object(), "重新连线完毕。\n");
 }
-

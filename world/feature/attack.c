@@ -10,9 +10,9 @@
 
 #define MAX_OPPONENT	4
 
-static object *enemy = ({});
-static object *netdead_enemy = ({});
-static string *killer = ({});
+nosave object *enemy = ({});
+nosave object *netdead_enemy = ({});
+nosave string *killer = ({});
 
 // prototypes
 
@@ -43,7 +43,7 @@ void fight_ob(object ob)
 
 	set_heart_beat(1);
 
-	if( member_array(ob, enemy)==-1 ) 
+	if( member_array(ob, enemy)==-1 )
 		enemy += ({ ob });
 }
 
@@ -53,7 +53,7 @@ void kill_ob(object ob)
     object env=environment();
 
         if(!ob) return;
-	
+
 	// mon 8/2/98
 	if(env && env->query("no_fight")
 		&& env->query("no_magic")) return;
@@ -164,10 +164,10 @@ void reset_action()
 {
 	object ob;
 	string type, skill;
-	
+
 	if ( ob = query_temp("weapon") )
 	    type = ob->query("skill_type");
-	else 
+	else
 		type = "unarmed";
 
 	if( stringp(skill = query_skill_mapped(type)) ) {
@@ -187,7 +187,7 @@ void reset_apply_action()
 
 	if( ob = query_temp("weapon") )
 	    type = ob->query("apply/skill_type");
-	else 
+	else
 		type = "unarmed";
 
 	if( stringp(skill = query_skill_mapped(type)) ) {
@@ -237,7 +237,7 @@ void init()
 
 	if(	is_fighting()
 	||	!living(this_object())
-	||	!(ob = this_player()) 
+	||	!(ob = this_player())
 	||	environment(ob)!=env
 	||	!living(ob)
 	||	ob->query("linkdead") )
@@ -259,11 +259,11 @@ void init()
 	} else if( userp(ob) && (string)query("attitude")=="aggressive" ) {
 		COMBAT_D->auto_fight(this_object(), ob, "aggressive");
 		return;
-	} 
+	}
 
 	else if( random((int)query("bellicosity") / 40) > (int)query("cps")) {
 	    // mark my_killer_list in combatd/auto_fight.
 		COMBAT_D->auto_fight(this_object(), ob, "berserk");
 		return;
-	} 
+	}
 }

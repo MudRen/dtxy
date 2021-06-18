@@ -1,6 +1,6 @@
 //盘丝洞最终pfm
-//2004-1-6 by kryos //thank violet's describes  huarong 2004/1 
-//rewrited for dtxy2004 by huarong 2004/1 
+//2004-1-6 by kryos //thank violet's describes  huarong 2004/1
+//rewrited for dtxy2004 by huarong 2004/1
 #include <ansi.h>
 #include <skill.h>
 #include <weapon.h>
@@ -9,14 +9,14 @@
 inherit SSERVER;
 
 int get_current_day_phase();
-static mapping *day_phase = NATURE_D->query_day_phase(); 
+nosave mapping *day_phase = NATURE_D->query_day_phase();
 
 int perform(object me, object target)
-{       
+{
         string msg,kind,dodge_skill,str;
         int damage, qin,i,k,maxhit,myexp,youexp,ratio,skill;
         int chixinjian,qingxiajian,yinsuojinling,lanhuashou,jiuyinxinjing,pansidafa;
-        int phase = get_current_day_phase(); 
+        int phase = get_current_day_phase();
         object weapon = me->query_temp("weapon");
         int cd = 10;
         //if(!wizardp(me))
@@ -24,11 +24,11 @@ int perform(object me, object target)
       	if(!me->query("qingyun_known"))
            	return notify_fail("你还没有学会"+HIW+"「风华乱舞」"+NOR+"。。。\n");
         if( !target ) target = offensive_target(me);
-        
+
         if( !target || !target->is_character()
            || !me->is_fighting(target) || !living(target) )
                 return notify_fail(HIW+"「风华乱舞」"+NOR+"只能在战斗中使用。\n");
-                
+
         if((int)me->query_skill("unarmed", 1) < 200 ||
            (int)me->query_skill("sword", 1) < 200 ||
            (int)me->query_skill("whip",1) < 200)
@@ -41,10 +41,10 @@ int perform(object me, object target)
            (int)me->query_skill("pansi-dafa",1) < 200||
            (int)me->query_skill("chixin-jian",1) < 200)
                 return notify_fail("你盘丝洞的功夫学的不到家，无法使用"+HIW+"「风华乱舞」"+NOR+"!\n");
-        
+
         if((int)me->query_skill("qin",1) < 200)
                 return notify_fail("你不通音律，无法使用"+HIW+"「风华乱舞」"+NOR+"!\n");
- 
+
         //if(weapon->query("id")!="yinsuo jinling")
         //        return notify_fail("除了银索金铃，好像还没有听说什么武器可以与五韵相通呀！");
         if(me->query("family/family_name")!="盘丝洞")
@@ -57,10 +57,10 @@ int perform(object me, object target)
 		cd -= me->query("lunhui_zhuanshi") - 1;
         if( time()-(int)me->query_temp("fenghua_end") < cd )
                 return notify_fail("绝招用多就不灵了！\n");
-                
+
         qin = me->query_skill("qin",1);
-         
-        if(random(target->query_per())<=me->query("per") && (phase<0 || phase>5)) 
+
+        if(random(target->query_per())<=me->query("per") && (phase<0 || phase>5))
         {
                 kind = CYN;
                 msg = HIC"\n$N"+HIC+"合着清脆的金铃，轻声念了一句：长天净，绛河清浅，皓月蝉娟。\n" NOR;
@@ -78,8 +78,8 @@ int perform(object me, object target)
                 msg = msg + HIY"$N"+HIY+"一声清啸，$n"+HIY+"眼前金光大盛，不禁慌了手脚，$N"+HIY+"展开了强大的攻势。\n\n"NOR;
                 str = me->name() + HIM"使出盘丝洞绝学" + HIY"「风华乱舞」"NOR + HIM"，" + target->name() + HIM"在" + HIY"「阳光」"+HIM+"的意境之中飘然仙去！";
         }
-        else 
-        {       
+        else
+        {
                 kind = BLU;
                 msg = HIB"\n$N"+HIB+"合着忧伤的金铃，轻声念了一句：七月七日长生殿，夜半无人私语时。\n"NOR;
                 msg = msg + HIB"刹那间，天空中阴云聚合，不一会便下起了密密细雨！\n"NOR;
@@ -116,7 +116,7 @@ int perform(object me, object target)
     	me->add_temp("apply/damage",-qin/4);
     	me->start_busy(2);
     	me->set_temp("fenghua_end",time());
-    	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )  
+    	if( (target->query("eff_kee")<0 || !living(target)) && !random(5) )
 		message("channel:rumor",HIM"【空穴来风】某人："+str+"\n"NOR,users());
         return 1;
 }
@@ -132,5 +132,3 @@ int get_current_day_phase() {
             break;
     return (i==0 ? sizeof(day_phase)-1 : i-1);
 }
-
-
