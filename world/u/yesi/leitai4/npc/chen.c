@@ -1,9 +1,9 @@
-// by snowcat 
+// by snowcat
 
 inherit NPC;
 
-#include <quest_ak.c>
-#include <reporting.c>
+#include "quest_ak.c"
+#include "reporting.c"
 
 string *strs = ({
     "$N燃起一根香祭祀一番，对$n说道：祖灵在天，请您去拜见$w并询问有关$o一事。\n",
@@ -13,7 +13,7 @@ string *strs = ({
     "$N对$n说道：老夫拜了祖宗，正缺人去拜访$w，告知$o之事。\n",
     "$N燃香完毕，回头对$n说道：不知可否去拜见$w，探问$o一事。\n",
     "$N在香火中缓缓向祖宗一拜，再对$n说道：祖灵在天请您去拜见$w并告知$o之事。\n",
-  });  
+  });
 
 // mon 3/22/99
 string get_message(string str1, string str2)
@@ -35,7 +35,7 @@ string get_message(string str1, string str2)
 	    "探听探听","打听打听","探问探问","查明有关","过问有关"});
     string *msg5=({"一事","之事","的消息","的情况","的问题",});
     string *msg6=({"！","。","。。。",});
-    
+
     if(random(10)<3)
       str = strs[random(sizeof(strs))];
     else {
@@ -59,7 +59,7 @@ void show_message(object who)
     if (! who->query("quest/pending/ask"))
 	return;
     str=who->query("quest/pending/ask/message");
-    if(!str) 
+    if(!str)
       message_vision ("$N对$n说道：这位"+RANK_D->query_respect(who)+
                     "，老夫不是请您去见"+who->query("quest/pending/ask/name")+
                     "询问"+who->query("quest/pending/ask/topic")+"一事吗？\n",
@@ -186,7 +186,7 @@ int test_player()
   who->set("quest/pending/ask/topic", quest[IDX_OBJ]);
   who->set("quest/pending/ask/acknowledge", acks[random(sizeof(acks))]);
   who->set("quest/pending/ask/time", delay);
-  
+
   str=get_message(quest[IDX_NAME], quest[IDX_OBJ]);
   who->set("quest/pending/ask/message",str);
 

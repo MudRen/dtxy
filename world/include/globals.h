@@ -4,7 +4,7 @@
 // This file is #included in all objects automatically by the driver.
 // (See config file of driver)
 
-#pragma save_binary
+// #pragma save_binary
 //added by Beeby @ DTXY for TOPTEN
 #define TOPTEN_RICH     "/data/topten/rich.o"
 #define TOPTEN_PKER     "/data/topten/pker.o"
@@ -74,6 +74,7 @@
 #define CRON_D                  "/adm/daemons/cron"
 #define PFM_D                   "/u/yesi/performd"
 #define COLOR_D                 "/adm/daemons/colord"
+#define STORY_D			"/adm/daemons/storyd"
 
 #define CLASS_D(x)		("/daemon/class/" + x)
 #define SKILL_D(x)		("/daemon/skill/" + x)

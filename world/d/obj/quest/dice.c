@@ -2,7 +2,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
-#include <task.h>
+#include "task.h"
 void create()
 {
         set_name("象牙骰子", ({ "toothdice","dice" }) );
@@ -14,8 +14,8 @@ void create()
                 set("unit", "粒");
                 set("owner_name", "小管家");
           set("owner_id", "guan jia");
-                
+
         }
-        
+
         setup();
 }

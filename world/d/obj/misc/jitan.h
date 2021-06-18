@@ -1,6 +1,7 @@
-	
+
 #include <ansi.h>
-#include </d/city/misc/banned.h>
+#include "/d/city/misc/banned.h"
+
 #define SHILI_D "/adm/daemons/shili"
 void invite_one(object me,string pos);
 
@@ -15,7 +16,7 @@ void invite_one(object me,string pos);
 	{
 		int i=0;
 		int sum=1;
-		
+
 		while(sum<exp){
 			sum=sum*10;
 			i++;
@@ -27,7 +28,7 @@ void invite_one(object me,string pos);
 	{
 		int obexp=ob->query("combat_exp");
 		int ll,tl;
-		
+
 		tl=exp*12/10;
 		ll=exp*8/10;
 		if(obexp>ll&&obexp<tl)return 1;
@@ -39,7 +40,7 @@ void invite_one(object me,string pos);
 	    string pos=get_pos();
 	    string faname=SHILI_D->query_family(pos);
 	    string mname=SHILI_D->query_master(faname);
-	    
+
 	    this_object()->set("short",mname+"祭台");
 	    add_action("do_tiaozhan","tiaozhan");
 	    add_action("do_list","listshili");
@@ -74,10 +75,10 @@ void invite_one(object me,string pos);
 		string pos=get_pos();
 		string faname=me->query("family/family_name");
 		int shili=SHILI_D->query_shili(pos,faname);
-		
+
 		if( ! faname )
 		return notify_fail("你还是赶快找个人罩着你吧！\n");
-		
+
 		write(faname+"在本地区的势力为："+shili+"\n");
 		return 1;
 	}
@@ -90,16 +91,16 @@ void invite_one(object me,string pos);
 		string faname=SHILI_D->query_family(pos);
 		object* inv;
 		int i;
-		
+
 		if(me->is_busy())
-		    return notify_fail("你正忙着呢。\n");       
-	    
+		    return notify_fail("你正忙着呢。\n");
+
 		if(exp<100000)
 		    return notify_fail("你活得不耐烦了，这也敢来找麻烦！\n");
-	    
+
 		if(me->query("family/family_name")==faname)
 		    return notify_fail("你到本门的地头上捣什么乱？\n");
-	    
+
 		if(!me->query("family/family_name"))
 		     return notify_fail("你又在为谁辛苦为谁忙呢?\n");
 
@@ -109,11 +110,11 @@ void invite_one(object me,string pos);
 		for(i=0;i<sizeof(inv);i++)
 		   if(inv[i]->query_temp("in_tiaozhan"))
 			return notify_fail("已有人在这里挑战了，你还是等等吧。\n");
-			
+
 		me->set_temp("in_tiaozhan",1);
 		write(GRN+SHILI_D->query_master(faname)+"的神像突然开口说道："+RANK_D->query_rude(me)+"你等着，我去找一个人和你比试比试！\n"+NOR);
-		invite_one(me,pos);        
-		return 1;           
+		invite_one(me,pos);
+		return 1;
 	}
 
 	void invite_one(object me,string pos)
@@ -123,7 +124,7 @@ void invite_one(object me,string pos);
 		int i=sizeof(list);
 		string faname=SHILI_D->query_family(pos);
 		int exp=me->query("combat_exp");
-		
+
 		while(i--){
 		    if(list[i]->query("family/family_name")!=faname)
 			continue;
@@ -140,16 +141,16 @@ void invite_one(object me,string pos);
 		    if (!living(list[i]))
 				continue;
 		    if(list[i]->query_temp("in_tiaozhan"))
-				continue;       
+				continue;
 		    if(list[i]->query_temp("ask_yingzhan"))
-				continue;               
-	    
+				continue;
+
 		    if(exp<list[i]->query("combat_exp")&&list[i]->query("combat_exp")<exp*10)
 		       canusers+=({list[i]});
 		}
 		if(sizeof(canusers)>0){
 		     i=random(sizeof(canusers));
-				
+
 		  canusers[i]->set_temp("ask_yingzhan",1);
 		  canusers[i]->set_temp("yingzhan_place",file_name(this_object()));
 		  canusers[i]->set_temp("yingzhan_man",me);
@@ -181,8 +182,8 @@ void invite_one(object me,string pos);
 
 	void alternative_die (object me)
 	{
-	  
-	  
+
+
 	  object ob;
 	  int exp=me->query("combat_exp");
 	   string str;
@@ -190,7 +191,7 @@ void invite_one(object me,string pos);
 	  string pos=get_pos();
 	  string ofaname,mfaname;
 	  string omname,mmname;
-	  
+
 	  me->set("kee", 1);
 	  me->set("sen", 1);
 	  me->set("eff_kee",me->query("max_kee"));
@@ -198,10 +199,10 @@ void invite_one(object me,string pos);
 	  me->remove_all_killer();
 	  all_inventory(environment(me))->remove_killer(me);
 	  ob = me->query_temp("last_damage_from");
-	  
+
 	  if (! ob)
-	    return;  
-	  
+	    return;
+
 	  if(!userp(ob)){
 		destruct (ob);
 		return ;
@@ -210,19 +211,19 @@ void invite_one(object me,string pos);
 		destruct (me);
 		return ;
 		}
-	  
-	  
+
+
 	  if(!me->query_temp("in_tiaozhan")||!ob->query_temp("in_tiaozhan"))
 	       return;
 	  message_vision ("\n$N重重地摔倒在地。\n",me);
 	  message_vision ("地下传来崔判官的声音：门派之争，不伤阳寿！\n",me);
 	  message_vision ("\n$N慢慢从地上爬将起来。\n",me);
-	  
+
 	  ofaname=ob->query("family/family_name");
 	  mfaname=me->query("family/family_name");
 	  omname=SHILI_D->query_master(ofaname);
 	  mmname=SHILI_D->query_master(mfaname);
-	  
+
 	  i=(i-3)*5+2;
 
 	  me->add("faith",-i/2-random(i/2));
@@ -237,7 +238,7 @@ void invite_one(object me,string pos);
 		str=ofaname+"接管了对"+SHILI_D->query_chinese(pos)+"的控制权！";
 		this_object()->set("short",omname+"祭台");
 		CHANNEL_D->do_channel(ob,"chat",str);
-	  }     
+	  }
 	  me->delete_temp("in_tiaozhan");
 	  ob->delete_temp("in_tiaozhan");
 
@@ -247,8 +248,8 @@ void invite_one(object me,string pos);
 	{
 	    if(me->query_temp("in_tiaozhan"))
 		return notify_fail("你还在挑战中，怎么能离开呢？\n");
-	    return ::valid_leave(me, dir);      
-	}    
+	    return ::valid_leave(me, dir);
+	}
 
 
 	int do_kill(string arg)
@@ -258,7 +259,7 @@ void invite_one(object me,string pos);
          object ob;
         if(!arg || !objectp(ob = present(arg, environment(who))))
             return  1;
-       
+
          if (who->query_temp("in_tiaozhan")&&ob->query_temp("in_tiaozhan")) return 0;
      tell_object(me,"你没有在挑战中，不能在祭台杀人！\n"NOR);
      return 1;

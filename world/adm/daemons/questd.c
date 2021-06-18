@@ -2,7 +2,7 @@
 #include <ansi.h>
 #include <command.h>
 #include <questd.h>
-#pragma save_binary
+// #pragma save_binary
 
 string *quests;
 string *roomlines;

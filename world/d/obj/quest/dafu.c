@@ -2,7 +2,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
-#include <task.h>
+#include "task.h"
 void create()
 {
        set_name("大斧",({"big axe", "axe"}));
@@ -16,4 +16,3 @@ void create()
           set("owner_id", "cheng yaojin");
         }
 }
-

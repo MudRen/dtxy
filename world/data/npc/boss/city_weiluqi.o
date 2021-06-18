@@ -1,8 +1,7 @@
 #/d/city/npc/laowei.c
-dbase (["shen_type":1,"race":"人类","per":21,"spi":30,"age":42,"con":10,"cor":21,"combat_exp":10002,"int":24,"cps":15,"kee":0,"str":14,"kar":23,"startroom":"/d/city/zahuopu","gin":580,"can_speak":1,"sen":0,"mana":0,"gender":"男性","atman":0,"eff_sen":2106,"name":"魏录齐","vendor_goods":(["box":"/d/city/obj/depositbox","seal":"/obj/paper_seal","bag":"/d/obj/misc/bag","cutan":"/d/obj/food/cutan",]),"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"MKS":1,"force":0,"unit":"位","max_gin":580,"eff_gin":580,"actions":,"bellicosity":0,"channel":(["tell_count":2,"last_tell":1357481082,]),"max_sen":2106,"eff_kee":-1,"water":0,"attitude":"peaceful","id":"wei luqi","food":0,"env":([]),"potential":17808,"long":"杂货铺的老板，笑眯眯的看着你。","force_factor":5,"default_actions":,"max_force":200,"title":"杂货铺老板","mark":(["moon_ice":1,]),"max_kee":986,"disable_type":" <昏迷不醒>",])
-skills (["unarmed":30,"parry":30,"dodge":40,])
-learned (["unarmed":448,"parry":5,"dodge":354,])
+dbase (["disable_type":" <昏迷不醒>","per":21,"env":([]),"mark":(["moon_ice":1,]),"max_kee":986,"eff_sen":2106,"force_factor":5,"str":14,"kee":986,"max_gin":580,"force":200,"MKS":1,"title":"杂货铺老板","max_force":200,"gin":580,"kar":23,"cor":21,"startroom":"/d/city/zahuopu","shen_type":1,"eff_kee":986,"con":10,"water":0,"long":"杂货铺的老板，笑眯眯的看着你。","unit":"位","eff_gin":580,"vendor_goods":(["bag":"/d/obj/misc/bag","seal":"/obj/paper_seal","box":"/d/city/obj/depositbox","cutan":"/d/obj/food/cutan",]),"int":24,"mana":0,"can_speak":1,"race":"人类","name":"魏录齐","potential":17808,"food":0,"spi":30,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"default_actions":,"id":"wei luqi","actions":,"cps":15,"channel":(["tell_count":2,"last_tell":1357481082,]),"atman":0,"gender":"男性","combat_exp":10000,"attitude":"peaceful","max_sen":2106,"bellicosity":0,"sen":2106,"age":42,])
+skills (["dodge":40,"parry":30,"unarmed":30,])
+learned (["dodge":354,"parry":5,"unarmed":448,])
 SAVE_NAME "city_weiluqi"
 price_ratio 10
-close_time 1361361146
-last_profit 12500
+close_time 1624070130

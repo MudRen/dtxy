@@ -3,7 +3,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
-#include <task.h>
+#include "task.h"
 void create()
 {
         set_name("烂鱼网", ({"lan yuwang", "wang"}));
@@ -17,4 +17,3 @@ void create()
                 set("owner_id","zhang shun");
         }
 }
-

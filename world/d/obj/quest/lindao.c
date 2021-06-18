@@ -2,7 +2,7 @@
 // 神话世界·西游记·版本４．５０
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
-#include <task.h>
+#include "task.h"
 void create()
 {
         set_name("砍林刀", ({ "lindao" }) );
@@ -17,8 +17,8 @@ void create()
                 set("owner_name", "砍柴道士");
           set("owner_id", "taoist");
                 set("long", "这是一寻常的砍林刀，专门用来砍小树和灌木．\n");
-                
+
         }
-        
+
         setup();
 }

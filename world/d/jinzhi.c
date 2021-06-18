@@ -1,4 +1,6 @@
 #include <ansi.h>
+inherit ITEM;
+
 void create()
 {
   set_name(""HIY"½ðÖ¼"NOR"", ({"jin zhi","jinzhi"}));

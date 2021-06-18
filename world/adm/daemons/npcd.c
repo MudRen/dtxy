@@ -1,7 +1,7 @@
 // named.c
 
 //#pragma optimize
-//#pragma save_binary
+//// #pragma save_binary
 
 #include <npc/name.h>
 #include <npc/chinese.c>
@@ -63,7 +63,7 @@ void init_npc_skill(object ob, int lvl)
         ks = keys(ob->query_skills());
         for (i = 0; i < sizeof(ks); i++)
                 ob->set_skill(ks[i], sk_lvl);
-                
+
 }
 
 string *nations = ({ "ÖĞ¹ú", "ÑÅµäÊ¥³Ç", "¹ê´È", "ºÉÀ¼", "ÌìóÃ", "ÃÉ¹Å",
@@ -183,4 +183,3 @@ object get_object(string name)
                 return ob;
         return load_object(name);
 }
-

@@ -3,7 +3,7 @@
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
 
-#include <task.h>
+#include "task.h"
 void create()
 {
         set_name("¶ú¶ä°Î×Ó", ({"er ba", "ba zi"}));

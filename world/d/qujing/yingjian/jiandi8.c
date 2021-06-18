@@ -4,7 +4,7 @@
 //  /d/qujing/yingjian/xiaolu1.c
 
 inherit ROOM;
-#include <jiandi.h>
+#include "jiandi.h"
 
 void create ()
 {

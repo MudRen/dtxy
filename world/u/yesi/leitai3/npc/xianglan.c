@@ -1,9 +1,9 @@
-// by snowcat 
+// by snowcat
 
 inherit NPC;
 
-#include <quest_ms.c>
-#include <reporting.c>
+#include "quest_ms.c"
+#include "reporting.c"
 
 int test_player();
 
@@ -68,7 +68,7 @@ int test_player()
     "$N对$n说道：哦，对了，姑娘想帮人找一找什么",
     "$N对$n点头笑着说道：谢谢啦，姑娘想替人找",
     "$N微笑着对$n一点头说道：有人曾打听是否有",
-  });  
+  });
   string str;
   object me = this_object();
   object who = this_player();
@@ -172,7 +172,7 @@ int accept_object(object who, object ob)
   }
 
   if (ob->is_character()) return 0;
-  
+
   if (who->query("quest/pending/cloth/name") != ob->query("name"))
   {
     message_vision ("$N对$n说道：这位"+RANK_D->query_respect(who)+
@@ -231,7 +231,3 @@ void rewarding (object who, object ob)
   who->delete("quest/pending/cloth");
   quest_done(who);
 }
-
-
-
-

@@ -1,3 +1,5 @@
+#include <runtime_config.h>
+
 object connect()
 {
         object login_ob;
@@ -77,18 +79,20 @@ void preload(string file)
 }
 void log_error(string file, string message)
 {
-        string name, home;
-
-        if( find_object(SIMUL_EFUN_OB) )
-                name = file_owner(file);
-
-        if (name) home = user_path(name);
-        else home = LOG_DIR;
-
-        //if(this_player(1)) efun::write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");
-
-        //efun::write_file(home + "log", message);
-        write("±àÒëÊ±¶Î´íÎó£º" + message+"\n");
+    if (strsrch(message, "Warning") == -1)
+    {
+        if (this_player(1))
+        {
+                efun::write(get_config(__DEFAULT_ERROR_MESSAGE__) + "\n");
+        }
+        // ¼ÇÂ¼´íÎóÈÕÖ¾
+        efun::write_file(LOG_DIR + "log_error", message);
+    }
+    else
+    {
+        // ¼ÇÂ¼¾¯¸æÈÕÖ¾
+        efun::write_file(LOG_DIR + "log", message);
+    }
 }
 int save_ed_setup(object who, int code)
 {
@@ -182,13 +186,14 @@ CHANNEL_D->do_channel(this_object(), "sys",
     	       error["error"]));
     return res;
 }
-string error_handler( mapping error, int caught )
+void error_handler( mapping error, int caught )
 {
     if (this_player(1)) {
         this_player(1)->set_temp("error", error);
-        tell_object(this_player(1), standard_trace(error, caught));
+        // tell_object(this_player(1), standard_trace(error, caught));
     }
-    return standard_trace(error, caught);
+
+    efun::write_file(LOG_DIR + "error_handler", standard_trace(error, caught));
 }
 
 // valid_shadow: controls whether an object may be shadowed or not

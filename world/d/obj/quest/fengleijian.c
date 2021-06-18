@@ -3,7 +3,7 @@
 /* <SecCrypt CPL V3R05> */
 inherit ITEM;
 
-#include <task.h>
+#include "task.h"
 void create()
 {
       set_name("·çÀ×ïµ",({"fenglei jian","jian"}));
@@ -18,4 +18,3 @@ void create()
            set("owner_id", "yuchi gong");
         }
 }
-

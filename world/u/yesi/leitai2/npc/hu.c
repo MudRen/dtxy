@@ -2,8 +2,8 @@
 
 inherit NPC;
 
-#include <quest_kl.c>
-#include <reporting.c>
+#include "quest_kl.c"
+#include "reporting.c"
 
 int test_player();
 
@@ -75,7 +75,7 @@ int test_player()
     "$N怒发冲冠，对$n说道：$w为非作歹，您火速去将之了结掉！\n",
     "$N将卦一占，回头对$n说道：好，正是时候！您去将$w降服掉！\n",
     "$N占卦完毕对$n说道：去去，将$w杀掉！\n",
-  });  
+  });
   object me = this_object();
   object who = this_player();
   int *quest_keys;

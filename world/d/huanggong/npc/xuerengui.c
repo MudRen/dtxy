@@ -1,7 +1,7 @@
 
 inherit NPC;
 #include <ansi.h>
-#include <greeting.h>
+#include "greeting.h"
 string ask_bad(object me);
 int do_job();
 int ask_done();
@@ -20,7 +20,7 @@ void create()
         set("str", 35);
         set("max_kee", 1850);
         set("max_gin", 1600);
-          set("max_mana",10000); 
+          set("max_mana",10000);
         set("mana", 3500);
         set("force", 9600);
         set("max_force", 6600);
@@ -80,10 +80,10 @@ int accept_object(object who, object ob)
 {
                 int i;
       string bname = who->name()+"的"+who->query("bad/name") + "的头颅";
-     
+
      if ( (string)ob->query("name") != bname )
         return notify_fail("薛仁贵怒道：你竟敢糊弄我！\n");
-        
+
 if (!ob->query("killer") ||ob->query("killer") != who->query("id"))
        return notify_fail("薛仁贵大怒：不是你杀的也敢拿来,小心我扁你！\n");
                 i =who->query("combat_exp");
@@ -91,7 +91,7 @@ if (!ob->query("killer") ||ob->query("killer") != who->query("id"))
       if (i< 1500 ) {
       who->add("combat_exp", who->query("combat_exp")/2000 );
         }
-        else { 
+        else {
         who->add("combat_exp", 1501);
  }
       who->add("potential", 50 + random(100) );
@@ -105,36 +105,36 @@ if (!ob->query("killer") ||ob->query("killer") != who->query("id"))
 
 
 int do_job()
-{      
+{
         object me;
-        me = this_player(); 
-        
+        me = this_player();
+
     if( me->query("job/sxy-done")>0)
     {
                 tell_object(me,"你必须先把上次的任务报告了以后才能再要任务。\n");
                 return 1;
-    } 
-    else 
+    }
+    else
     if( me->queryi("job/sxy")>0)
     {
                 tell_object(me,"你已在这儿要过任务了，快去守城。\n");
                 return 1;
-    } 
-    else 
+    }
+    else
     if( me->query("combat_exp")<60000)
     {
                 tell_object(me,"你为朝廷效力之心可表，可是守城不是儿戏，不要丢了性命。\n");
                 return 1;
     }
 
-    message_vision(CYN"薛仁贵对$N说道：你这就去吧，为朝廷效力，才是升官捷径者。\n"NOR,me); 
+    message_vision(CYN"薛仁贵对$N说道：你这就去吧，为朝廷效力，才是升官捷径者。\n"NOR,me);
         me->set("job/sxy", 1);
         me->apply_condition("sxy-job", 8);
-        return 1;   
+        return 1;
 }
 
 int ask_done()
-{      
+{
 
         object me,ob;
         int gong,exp,pot,money;
@@ -142,8 +142,8 @@ int ask_done()
         gong = me->query("job/gong");
         exp = gong * 100;
         pot = gong * 30;
-        money = gong * 100; 
-        
+        money = gong * 100;
+
     if( me->query("job/sxy-done")< 1)
     {
                 tell_object(me,"你的任务还没完成呢。\n");
@@ -151,8 +151,8 @@ int ask_done()
     }
 
     message_vision(CYN"薛人贵对$N说道：做得不错！为国出力就应如此。\n"NOR,me);
-    message_vision(CYN"薛仁贵对$N说道：你总共立了" + gong + "件功。\n"NOR,me);     
-    message_vision(CYN"薛仁贵对$N说道：该奖励你" + exp + "点经验，" + pot + "点潜能，" + money + "两银子，"+gong + "点官值。\n"NOR,me);        
+    message_vision(CYN"薛仁贵对$N说道：你总共立了" + gong + "件功。\n"NOR,me);
+    message_vision(CYN"薛仁贵对$N说道：该奖励你" + exp + "点经验，" + pot + "点潜能，" + money + "两银子，"+gong + "点官值。\n"NOR,me);
     me->add("combat_exp",exp);
     me->add("potential",pot);
     me->add("office_number",gong);
@@ -164,4 +164,3 @@ int ask_done()
     ob->move(me);
     return 1;
 }
-

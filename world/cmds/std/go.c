@@ -1,6 +1,6 @@
 //2001 by lestat
 // go.c
-#pragma save_binary
+// #pragma save_binary
 #include <ansi.h>
 inherit F_CLEAN_UP;
 #include "/cmds/std/valid_move.h";
@@ -98,14 +98,14 @@ int main(object me, string arg, int silent)
 
         if (ridee = me->ride())
           ridemsg = ridee->query("ride/msg")+"着"+ridee->name()+"踏着一朵祥云";
-        else  
+        else
           ridemsg = "";
 
-        if(ridee && !valid_move(ridee)) 
+        if(ridee && !valid_move(ridee))
            return notify_fail("你的座骑走动不了。\n");
-           
+
 if(me->is_ghost()&&domain_file(base_name(environment(me)))!="death")
- {              
+ {
  	        write(BLU"突然间阴风阵阵，你耳边响起一阵空洞而又阴森的声音:‘回来哟，回来哟!’\n"NOR);
 		write(HIW"一阵白雾将你裹了起来，你又回到了鬼门关\n"NOR);
                 me->move("/d/death/gate");
@@ -127,13 +127,13 @@ if(me->is_ghost()&&domain_file(base_name(environment(me)))!="death")
 	n=NATURE_D->night();
 	i_env=(int)env->query("outdoors");
 	i_obj=(int)obj->query("outdoors");
-	
+
 	if (!n) i=1;
 	if (!i_env && !i_obj) i=1;
 	if (n && i_env && !i_obj) i=2;
 	if (n && ! i_env && i_obj) i=3;
 	if (n && i_env && i_obj ) i =4;
-	if( me->is_fighting() ) 
+	if( me->is_fighting() )
 	{str="跌跌撞撞地跑了过来，模样有些狼狈。\n";
 	 str1="往" + dir + env->query("short") +"落荒而逃了。\n";
 	}else
@@ -163,7 +163,7 @@ if (ridee = me->ride())
 	str1="骑着"+ridee->name()+"往" + dir + "疾驰而去。\n";
 	}
 	switch( i)
-	{	case 1 : 
+	{	case 1 :
 		mout = me->name() + str1;
 		min = me->name() + thing_msg +str;
 		break;
@@ -178,7 +178,7 @@ if (ridee = me->ride())
 		mout = "一条黑影"  +str1;
 		min  = me->name() + thing_msg +str;
 		}
-		break;	
+		break;
 		case 3 :
 		if(me->query("gender") == "女性")
 		{
@@ -208,7 +208,7 @@ if (ridee = me->ride())
 			{
 
 	switch( i)
-	{	case 1 : 
+	{	case 1 :
 		mout = me->name() + str1;
 		min = me->name() + thing_msg + str;
 		break;
@@ -223,7 +223,7 @@ if (ridee = me->ride())
 		mout = "一条黑影" + str1;
 		min  = me->name() + thing_msg + str;
 		}
-		break;	
+		break;
 		case 3 :
 		if(me->query("gender") == "女性")
 		{
@@ -276,7 +276,7 @@ if (ridee = me->ride())
 		me->query_temp("rumor_time")+10<time() &&
 		  MISC_D->find_place(environment(me))!=
 		me->query_temp("last_place"))
-		{ 
+		{
 		  me->set_temp("last_place",MISC_D->find_place(environment(me)));
 		  msg="听说官府通缉杀人犯"+HIW+me->query("name")+HIM+"最近在"+HIC+me->query_temp("last_place")+HIM+"附近出没。\n";
 		CHANNEL_D->do_channel(this_object(),"rumor",msg);
@@ -316,11 +316,10 @@ int help(object me)
 {
 	write(@HELP
 指令格式 : go <方向>
- 
+
 让你往指定的方向移动。
- 
+
 HELP
     );
     return 1;
 }
-

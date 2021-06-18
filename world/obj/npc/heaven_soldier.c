@@ -4,11 +4,11 @@
 
 inherit NPC;
 
-#include <soldier_skill.h>
+#include "soldier_skill.h"
 void create()
 {
     	object ob1, ob2;
-	
+
 	string *order = ({"¼×", "ÒÒ", "±û", "¶¡", "Îì", "¼º", "¸ı", "ĞÁ", "ÈÉ", "¹ï"});
 
 	set_name("Ìì" + (order[random(10)]) + "Éñ±ø", ({ "heaven soldier", "soldier" }) );

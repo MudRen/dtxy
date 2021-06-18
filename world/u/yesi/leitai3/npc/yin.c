@@ -1,10 +1,10 @@
-// by snowcat 
+// by snowcat
 
 inherit NPC;
 
-#include <quest_fd.c>
-#include <quest_gv.c>
-#include <reporting.c>
+#include "quest_fd.c"
+#include "quest_gv.c"
+#include "reporting.c"
 
 int test_player();
 
@@ -75,7 +75,7 @@ int test_player()
     "$N从打开签盒取出一签对$n说道：他乡有难，请去给$w送$o。\n",
     "$N将手中签细细一读，对$n说道：签曰现有$w急需$o。\n",
     "$N一扬签对$n说道：事不宜迟请去给$w送$o。\n",
-  });  
+  });
   object me = this_object();
   object who = this_player();
   int *quest_keys;
@@ -205,5 +205,3 @@ void rewarding (object who)
   who->delete("quest/pending/give");
   quest_done(who);
 }
-
-

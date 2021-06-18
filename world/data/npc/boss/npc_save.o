@@ -1,7 +1,5 @@
-#/d/ourhome/honglou/npc/leng.c
-dbase (["race":"人类","shen_type":1,"per":25,"spi":15,"con":25,"age":46,"cor":24,"int":15,"combat_exp":10000,"cps":19,"str":17,"kee":1638,"kar":26,"startroom":"/d/ourhome/honglou/main","gin":340,"can_speak":1,"sen":1170,"gender":"男性","eff_sen":1170,"name":"冷子兴","vendor_goods":(["mallet":"/d/obj/misc/mallet","pillow":"/d/obj/misc/pillow","buwawa":"/d/obj/misc/buwawa","camera":"/d/obj/misc/camera",]),"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"unit":"位","max_gin":340,"eff_gin":340,"actions":,"max_sen":1170,"eff_kee":1638,"attitude":"friendly","id":"leng zixing","default_actions":,"title":"古董商","max_kee":1638,])
-skills (["unarmed":30,"dodge":30,])
-learned (["unarmed":0,"dodge":0,])
+#/d/jz/npc/yang.c
+dbase (["eff_gin":160,"daoxing":1000,"vendor_goods":(["zhujian":"/d/jz/obj/zhujian","dadao":"d/jz/obj/dadao","fuchen":"/d/jz/obj/fuchen",]),"per":15,"int":23,"shop_id":({"huoji",}),"can_speak":1,"race":"人类","eff_sen":300,"max_kee":300,"name":"伙计","spi":15,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"shop_title":"小伙计","actions":,"kee":300,"id":"huoji","default_actions":,"str":30,"max_gin":160,"cps":24,"gender":"男性","gin":160,"kar":16,"combat_exp":1000,"cor":18,"attitude":"friendly","startroom":"/d/jz/zhahuopu","max_sen":300,"eff_kee":300,"con":25,"sen":300,"age":18,"unit":"位",])
 SAVE_NAME "npc_save"
 price_ratio 10
-close_time 1361410384
+close_time 1624075593

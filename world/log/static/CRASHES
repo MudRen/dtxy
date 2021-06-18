@@ -76,3 +76,4 @@ Sat Dec  8 16:24:05 2012  大唐西游记 crashed on: Sat Dec  8 16:24:05 2012, error
 Sat Dec  8 16:24:05 2012  this_player: obj/user#46373907 ("飞天")
 Sat Dec  8 16:24:05 2012  this_object: obj/user#46373907 ("飞天")
 Wed Feb 20 14:05:03 2013  大唐西游记 crashed on: Wed Feb 20 14:05:03 2013, error: Process terminated
+Fri Jun 18 14:31:08 2021  大唐西游记 crashed on: Fri Jun 18 14:31:08 2021, error: SIGINT: Process interrupted

@@ -1,9 +1,9 @@
-// by snowcat 
+// by snowcat
 
 inherit NPC;
 
-#include <quest_am.c>
-#include <reporting.c>
+#include "quest_am.c"
+#include "reporting.c"
 
 int test_player();
 
@@ -66,7 +66,7 @@ int test_player()
     "$N对$n点头说道：相公刚说了，让妾身征集什么",
     "$N对$n一点头说道：这里尚缺些",
     "$N想想对$n说道：可否帮相府寻得",
-  });  
+  });
   string str;
   object me = this_object();
   object who = this_player();

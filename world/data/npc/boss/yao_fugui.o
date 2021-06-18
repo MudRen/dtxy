@@ -1,9 +1,8 @@
 #/d/city/npc/xiaoliu.c
-dbase (["race":"人类","shen_type":1,"per":24,"spi":29,"age":36,"con":11,"cor":26,"combat_exp":10002,"int":20,"cps":27,"kee":0,"str":30,"kar":15,"startroom":"/d/city/xiemao","gin":564,"can_speak":1,"sen":0,"mana":0,"atman":0,"gender":"男性","eff_sen":1148,"name":"姚富贵","limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"vendor_goods":(["pipao":"/d/gao/obj/piyi","magua":"/d/gao/obj/magua","hat":"/d/gao/obj/hat","shoes":"/d/gao/obj/shoes",]),"unit":"位","force":0,"max_gin":564,"called":1,"eff_gin":564,"actions":,"bellicosity":0,"channel":(["tell_count":2,"last_tell":1359716854,]),"max_sen":1898,"eff_kee":-1,"water":0,"attitude":"friendly","id":"yao fugui","env":([]),"food":0,"potential":19853,"long":"姚老板是高家集人，后来挣了钱，开了家布店。","force_factor":0,"default_actions":,"mark":(["moon_ice":1,]),"title":"布店老板","max_kee":1586,"disable_type":" <昏迷不醒>",])
-skills (["unarmed":35,"parry":35,"dodge":30,])
-learned (["unarmed":1166,"parry":29,"dodge":589,])
+dbase (["disable_type":" <昏迷不醒>","per":24,"env":([]),"mark":(["moon_ice":1,]),"max_kee":1586,"eff_sen":1898,"called":1,"force_factor":0,"str":30,"kee":1586,"max_gin":564,"force":0,"title":"布店老板","gin":564,"kar":15,"cor":26,"startroom":"/d/city/xiemao","shen_type":1,"eff_kee":1586,"con":11,"water":0,"long":"姚老板是高家集人，后来挣了钱，开了家布店。","unit":"位","eff_gin":564,"vendor_goods":(["shoes":"/d/gao/obj/shoes","magua":"/d/gao/obj/magua","pipao":"/d/gao/obj/piyi","hat":"/d/gao/obj/hat",]),"int":20,"mana":0,"can_speak":1,"race":"人类","name":"姚富贵","potential":19853,"food":0,"spi":29,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"default_actions":,"id":"yao fugui","actions":,"cps":27,"channel":(["tell_count":2,"last_tell":1359716854,]),"gender":"男性","atman":0,"combat_exp":10000,"attitude":"friendly","max_sen":1898,"bellicosity":0,"sen":1898,"age":36,])
+skills (["dodge":30,"parry":35,"unarmed":35,])
+learned (["dodge":589,"parry":29,"unarmed":1166,])
 SAVE_NAME "yao_fugui"
 price_ratio 10
-close_time 1361347130
-profit 50
-last_profit 100
+close_time 1624070130
+last_profit 50

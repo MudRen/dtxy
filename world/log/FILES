@@ -16,3 +16,4 @@ Tue Nov 27 12:26:01 2012  [Tue Nov 27 12:26:01 2012] yekai((admin)) ed_starts /d
 Tue Nov 27 12:26:18 2012  [Tue Nov 27 12:26:18 2012] yekai((admin)) remove_files /binaries/daemon/class/yaomo/wudidong/kugu-blade/diyu.b.
 Sat Jan  5 14:34:08 2013  [Sat Jan  5 14:34:08 2013] yekai((admin)) ed_starts /adm/daemons/securityd.c.
 Sat Jan  5 14:34:30 2013  [Sat Jan  5 14:34:30 2013] yekai((admin)) remove_files /binaries/adm/daemons/securityd.b.
+Fri Jun 18 14:35:35 2021  [Fri Jun 18 14:35:35 2021] mudren((admin)) write attempt on /log//cmwhod failed.

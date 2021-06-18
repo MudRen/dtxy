@@ -2,7 +2,7 @@
 // literate.c
 
 inherit ITEM;
-#include <task.h>
+#include "task.h"
 
 void create()
 {

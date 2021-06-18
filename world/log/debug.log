@@ -79,11 +79,9 @@ Event backend in use: poll
 #define __VERSION__ "FluffOS v2017.2019102201 (git-abd40714-1571772338)"
 #define __WARN_OLD_RANGE_BEHAVIOR__ 
 ========================
-/include/globals.h line 7: Warning: Unknown #pragma, ignored. before //added by Beeby @ D
 /adm/simul_efun/path.c line 49: Warning: Unused local variable 't2' before the end of line
 /adm/simul_efun/path.c line 49: Warning: Unused local variable 't3' before the end of line
 /adm/simul_efun/path.c line 49: Warning: Unused local variable 't4' before the end of line
-/include/globals.h line 7: Warning: Unknown #pragma, ignored. before //added by Beeby @ D
 
 Loading preload files ...
 /adm/daemons/securityd...
@@ -112,4 +110,4 @@ Loading preload files ...
 Accepting connections on 0.0.0.0:5555.
 Initializations complete.
 
-d/pansi/shishi2.c: cannot replace a program with function references, ignored.
+d/lingtai/gate1.c: cannot replace a program with function references, ignored.

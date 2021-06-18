@@ -1,7 +1,7 @@
 
 inherit NPC;
 #include <ansi.h>
-#include <greeting.h>
+#include "greeting.h"
 string ask_bad(object me);
 
 void create()
@@ -69,12 +69,12 @@ int accept_object(object who, object ob)
 {
                 int i;
       string bname = who->name()+"的"+who->query("bad/name") + "的头颅";
-     
+
 write(bname+"\n",environment(who), who);
 write(ob->query("killer")+"\n",environment(who), who);
      if ( (string)ob->query("name") != bname )
         return notify_fail("薛仁贵怒道：你竟敢糊弄我！\n");
-        
+
 //if (!ob->query("killer") ||ob->query("killer") != who->query("id"))
 //       return notify_fail("薛仁贵大怒：不是你杀的也敢拿来,小心我扁你！\n");
                 i =who->query("combat_exp");
@@ -82,7 +82,7 @@ write(ob->query("killer")+"\n",environment(who), who);
       if (i< 1500 ) {
       who->add("combat_exp", who->query("combat_exp")/2000 );
         }
-        else { 
+        else {
         who->add("combat_exp", 1501);
  }
       who->add("potential", 50 + random(100) );

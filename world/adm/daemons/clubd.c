@@ -13,7 +13,7 @@
 //    info3:
 // ])
 
-#pragma save_binary
+// #pragma save_binary
 #include <ansi.h>
 inherit F_DBASE;
 inherit F_SAVE;
@@ -21,7 +21,7 @@ inherit F_SAVE;
 mapping club_record;
 mapping club_leader;
 
-private mapping club_detail = 
+private mapping club_detail =
 ([
 	"dragon" : 	([
 				"name" :	"听风楼",
@@ -119,7 +119,7 @@ varargs string show_club_members(string type)
 		{
 			return "没有此帮会纪录。\n";
 		}
-		
+
 	list+="\n";
 	return list;
 }
@@ -144,10 +144,10 @@ private void comfirm_clear_all(string yn, object ob)
 		write("取消！\n");
 		return;
 	}
-	
+
 	log_file( "CLUB", sprintf("[%s] %s(%s) 清除所有的帮会纪录。\n备份资讯:\n%s\n",  ctime(time()),
 		ob->query("name"),getuid(ob), show_club_members("all")) );
-	
+
 	club_record=([]);
 	save();
 	write("帮会资讯已全部删除。\n");
@@ -167,7 +167,7 @@ void clear_record(string club)
 	if(!mapp(club_record) || sizeof(club_record)<1)
 	{
 		write("目前没有帮会纪录。\n");
-		return;	
+		return;
 	}
 	clubs=keys(club_record);
 	if(sizeof(clubs)<1 || member_array(club,clubs)==-1)
@@ -175,7 +175,7 @@ void clear_record(string club)
 		write("没有这个帮会纪录。\n");
 		return;
 	}
-	
+
 	write("这样会清除"+club+"的帮会纪录！  确定要清除吗？(y/n)");
 	input_to("comfirm_clear",club, ob);
 }
@@ -187,10 +187,10 @@ private void comfirm_clear(string yn,string club, object ob)
 		write("取消！\n");
 		return;
 	}
-	
+
 	log_file( "CLUB", sprintf("[%s] %s(%s) 清除 %s 的帮会纪录。\n备份资讯:\n%s\n",  ctime(time()),
 		ob->query("name"),getuid(ob), club , show_club_members(club)) );
-	
+
 	club_record[club]=([]);
 	save();
 	write("["+club+"]帮会资讯已删除。\n");
@@ -209,7 +209,7 @@ void remove_club(string club)
 	if(!mapp(club_record) || sizeof(club_record)<1)
 	{
 		write("目前没有帮会纪录。\n");
-		return;	
+		return;
 	}
 
 	if(undefinedp(club_record[club]))
@@ -217,7 +217,7 @@ void remove_club(string club)
 		write("没有这个帮会纪录。\n");
 		return;
 	}
-	
+
 	write("这样会清除"+club+"帮会！  确定要清除吗？(y/n)");
 	input_to("comfirm_remove",club, ob);
 }
@@ -229,10 +229,10 @@ private void comfirm_remove(string yn,string club, object ob)
 		write("取消！\n");
 		return;
 	}
-	
+
 	log_file( "CLUB", sprintf("[%s] %s(%s) 删除 %s 帮会。\n备份资讯:\n%s\n",  ctime(time()),
 		ob->query("name"),getuid(ob), club , show_club_members(club)) );
-	
+
 	map_delete(club_record, club);
 	save();
 	write("["+club+"]帮会已删除。\n");
@@ -304,7 +304,7 @@ void set_club_leader(string club,string id)
 	if(!mapp(club_record) || sizeof(club_record)<1)
 	{
 		write("目前没有帮会纪录。\n");
-		return;	
+		return;
 	}
 
 	if(undefinedp(club_record[club]))
@@ -312,7 +312,7 @@ void set_club_leader(string club,string id)
 		write("没有这个帮会纪录。\n");
 		return;
 	}
-	
+
 	if( wiz_level(ob)<wiz_level("(arch)") && query_club_leader(club)!=getuid(ob) )
 	{
 		write("你没有足够的权限设定帮会领袖！\n");
@@ -420,13 +420,13 @@ mapping query_member_info(string club,string id)
 string *club_members(string club)
 {
 	string *members;
-	
+
 	if(undefinedp(club_record[club]))
 	{
 		notify_fail("没有这个帮会!!\n");
 		return ({"没有此帮会\n"});
 	}
-	
+
 	members=keys(club_record[club]);
 	return members;
 }

@@ -1,7 +1,7 @@
 #/d/qujing/tianzhu/npc/wu.c
-dbase (["race":"人类","per":20,"spi":29,"con":13,"age":40,"cor":27,"int":10,"combat_exp":10218,"cps":30,"str":30,"kee":0,"kar":15,"startroom":"/d/qujing/tianzhu/shoushi","gin":200,"can_speak":1,"sen":0,"mana":0,"atman":0,"gender":"男性","eff_sen":1508,"name":"吴老板","limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"vendor_goods":(["zuanjie":"/d/qujing/tianzhu/obj/zuanjie","baijie":"/d/qujing/tianzhu/obj/baijie","yinjie":"/d/qujing/tianzhu/obj/yinjie","jinjie":"/d/qujing/tianzhu/obj/jinjie","baojie":"/d/qujing/tianzhu/obj/baojie",]),"unit":"位","force":0,"max_gin":200,"eff_gin":200,"actions":,"bellicosity":0,"channel":(["tell_count":0,"last_tell":1361226451,]),"max_sen":1508,"eff_kee":-1,"water":0,"attitude":"heroism","id":"wu laoban","env":([]),"food":0,"potential":15170,"force_factor":18,"default_actions":,"max_force":200,"mark":(["moon_ice":1,]),"max_kee":200,"shop_id":({"laoban",}),"disable_type":" <昏迷不醒>",])
-skills (["blade":30,"unarmed":30,"parry":30,"dodge":30,])
-learned (["blade":0,"unarmed":1,"parry":8,"dodge":31,])
+dbase (["disable_type":" <昏迷不醒>","per":20,"env":([]),"mark":(["moon_ice":1,]),"max_kee":200,"eff_sen":1508,"force_factor":19,"kee":200,"str":30,"max_gin":200,"force":200,"max_force":200,"gin":200,"kar":15,"cor":27,"startroom":"/d/qujing/tianzhu/shoushi","eff_kee":200,"con":13,"water":0,"unit":"位","eff_gin":200,"vendor_goods":(["zuanjie":"/d/qujing/tianzhu/obj/zuanjie","jinjie":"/d/qujing/tianzhu/obj/jinjie","baijie":"/d/qujing/tianzhu/obj/baijie","baojie":"/d/qujing/tianzhu/obj/baojie","yinjie":"/d/qujing/tianzhu/obj/yinjie",]),"int":10,"shop_id":({"laoban",}),"mana":0,"can_speak":1,"race":"人类","name":"吴老板","potential":15170,"food":0,"spi":29,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"default_actions":,"id":"wu laoban","actions":,"cps":30,"channel":(["tell_count":0,"last_tell":1361226451,]),"gender":"男性","atman":0,"combat_exp":10151,"attitude":"heroism","max_sen":1508,"bellicosity":0,"sen":1508,"age":40,])
+skills (["dodge":30,"parry":30,"unarmed":30,"blade":30,])
+learned (["dodge":31,"parry":8,"unarmed":1,"blade":0,])
 SAVE_NAME "tianzhu_wu_laoban"
 price_ratio 10
-close_time 1361354632
+close_time 1624070149

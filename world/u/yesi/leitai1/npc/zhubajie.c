@@ -1,7 +1,7 @@
 inherit NPC;
 
-#include <quest_fd.c>
-#include <reporting.c>
+#include "quest_fd.c"
+#include "reporting.c"
 
 int test_player();
 
@@ -82,7 +82,7 @@ int test_player()
     "$N对$n点头说道：水陆大会即将开宴请各路法师到会，听说有法师想要什么",
     "$N对$n一点头说道：俺老猪救济饥民，听说正需要",
     "$N想想说：有人倒是想让俺老猪给找个什么什么",
-  });  
+  });
   string str;
   object me = this_object();
   object who = this_player();

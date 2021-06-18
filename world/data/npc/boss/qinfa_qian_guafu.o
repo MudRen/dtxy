@@ -1,7 +1,7 @@
 #/d/qujing/qinfa/npc/qian.c
-dbase (["shen_type":1,"race":"人类","per":21,"spi":14,"con":28,"age":30,"cor":23,"int":29,"combat_exp":5002,"last_sleep":1328160373,"cps":30,"str":11,"kee":0,"kar":14,"startroom":"/d/qujing/qinfa/zahuopu","gin":324,"can_speak":1,"sen":0,"mana":0,"gender":"女性","atman":0,"eff_sen":1664,"name":"钱寡妇","vendor_goods":(["shaozhou":"/d/obj/misc/shaoba","bag":"/d/obj/misc/bag","kuang":"/d/obj/misc/kuang",]),"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"force":0,"unit":"位","max_gin":324,"eff_gin":324,"actions":,"bellicosity":0,"channel":(["tell_count":0,"last_tell":1361189998,]),"max_sen":1664,"eff_kee":-1,"water":0,"attitude":"friendly","id":"qian guafu","food":0,"env":([]),"potential":35417,"default_actions":,"mark":(["moon_ice":1,]),"max_kee":1508,"disable_type":" <昏迷不醒>","shop_id":({"guafu","fu",}),])
-skills (["unarmed":30,"parry":6,"dodge":10,])
-learned (["unarmed":909,"parry":42,"dodge":120,])
+dbase (["disable_type":" <昏迷不醒>","per":21,"env":([]),"last_sleep":1328160373,"mark":(["moon_ice":1,]),"max_kee":1508,"eff_sen":1664,"kee":1508,"str":11,"max_gin":324,"force":0,"gin":324,"kar":14,"cor":23,"startroom":"/d/qujing/qinfa/zahuopu","shen_type":1,"eff_kee":1508,"con":28,"water":0,"unit":"位","eff_gin":324,"vendor_goods":(["bag":"/d/obj/misc/bag","shaozhou":"/d/obj/misc/shaoba","kuang":"/d/obj/misc/kuang",]),"int":29,"shop_id":({"guafu","fu",}),"mana":0,"can_speak":1,"race":"人类","name":"钱寡妇","potential":35417,"food":0,"spi":14,"limbs":({"头部","颈部","胸口","后心","左肩","右肩","左臂","右臂","左手","右手","腰间","小腹","左腿","右腿","左脚","右脚",}),"default_actions":,"id":"qian guafu","actions":,"cps":30,"channel":(["tell_count":0,"last_tell":1361189998,]),"atman":0,"gender":"女性","combat_exp":5000,"attitude":"friendly","max_sen":1664,"bellicosity":0,"sen":1664,"age":30,])
+skills (["dodge":10,"parry":6,"unarmed":30,])
+learned (["dodge":120,"parry":42,"unarmed":909,])
 SAVE_NAME "qinfa_qian_guafu"
 price_ratio 10
-close_time 1361362919
+close_time 1624070391

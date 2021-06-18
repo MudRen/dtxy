@@ -3,10 +3,10 @@
 //2000.10
 #include <ansi.h>
 inherit NPC;
-#include <soldier_skill.h>
+#include "soldier_skill.h"
 void create()
 {
-        
+
         set_name("不死鸟",({ "busi niao", "hufa" }) );
         set("long", "一只得道多年的不死鸟，传说是大鹏明王手下的得力干将。\n");
         set("attitude", "friendly");
@@ -20,14 +20,14 @@ void create()
         set("max_mana", 2000);
         set("mana", 2000);
         set("mana_factor", 100);
-        
+
         set("combat_exp", 1500000);
         set("daoxing", 1500000);
         set_skill("dodge", 200);
         set_skill("parry", 200);
         set_skill("unarmed", 200);
-        setup();        
-        
+        setup();
+
 }
 
 int heal_up()
@@ -40,9 +40,9 @@ int heal_up()
 }
 
 int receive_damage(string arg,int damage,object me)
-{       
-        return 1;       
-        
+{
+        return 1;
+
 }
 
 void leave()
@@ -73,4 +73,3 @@ void invocation(object who)
         set_leader(who);
   give_skill(who,"dengxian-dafa","sword");
 }
-
